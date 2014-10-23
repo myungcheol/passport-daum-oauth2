@@ -1,6 +1,6 @@
 {
   "name": "passport-daum-oauth2",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Passport Strategies for Daum using OAuth2",
   "main": "./lib",
   "directories": {
