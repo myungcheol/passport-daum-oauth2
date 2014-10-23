@@ -1,6 +1,6 @@
 # Passport-Daum-Oauth2
 
-[Passport](http://passportjs.org/) strategies for authenticating with [Daum](http://www.daum.com/) using OAuth 2.0.
+[Passport](http://passportjs.org/) strategies for authenticating with [Daum](http://www.daum.net/) using OAuth 2.0.
 
 This module lets you authenticate using Daum in your Node.js applications. By plugging into Passport, Daum authentication can be easily and unobtrusively integrated into any application or framework that supports [Connect](http://www.senchalabs.org/connect/)-style middleware, including [Express](http://expressjs.com/).
 
