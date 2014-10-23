@@ -14,40 +14,42 @@ This module lets you authenticate using Daum in your Node.js applications. By pl
 
 The Daum OAuth 2.0 authentication strategy authenticates users using a Daum account and OAuth 2.0 tokens. The strategy requires a `verify` callback, which
 accepts these credentials and calls `done` providing a user, as well as `options` specifying a client ID, client secret, and callback URL.
-    ```Javascript
-    var DaumStrategy = require('passport-daum-oauth2').Strategy;
 
-    passport.use('daum', new DaumStrategy({
-            clientID: DAUM_CLIENT_ID_ISSUED_BY_DAUM
-            clientSecret: DAUM_CLIENT_SECRET_ISSUED_BY_DAUM
-            callbackURL: YOUR_CALLBACK_URL_AFTER_AUTHENTICATION
-		},
-        function(accessToken, refreshToken, profile, done) {
-        	// check profile._raw or profile.json for whole profile data
+```Javascript
+var DaumStrategy = require('passport-daum-oauth2').Strategy;
 
-        	User.findOrCreate({daumId: profile.id}, function(err, user) {
-        		return done(err, user);
-			});
-        }
-    ));
-    ```
+passport.use('daum', new DaumStrategy({
+        clientID: DAUM_CLIENT_ID_ISSUED_BY_DAUM
+        clientSecret: DAUM_CLIENT_SECRET_ISSUED_BY_DAUM
+        callbackURL: YOUR_CALLBACK_URL_AFTER_AUTHENTICATION
+	},
+    function(accessToken, refreshToken, profile, done) {
+    	// check profile._raw or profile.json for whole profile data
+
+    	User.findOrCreate({daumId: profile.id}, function(err, user) {
+    		return done(err, user);
+		});
+    }
+));
+```
 
 #### Authenticate Requests
 
 Use `passport.authenticate()`, specifying the `'daum'` strategy, to authenticate requests.
 
 For example, as route middleware in an [Express](http://expressjs.com/) application:
-    ```Javascript
-    app.get('/daum'), passport.authenticate('daum'));
 
-	app.get('/daum/callback', passport.authenticate('daum', { failureRedirect: '/login'}), 
-    	function(req, res) {
-    		// successful authentication, redirect to home
-    		res.redirect('/');
-    	}
-    );
-    ```
-    
+```Javascript
+app.get('/daum'), passport.authenticate('daum'));
+
+app.get('/daum/callback', passport.authenticate('daum', { failureRedirect: '/login'}), 
+	function(req, res) {
+		// successful authentication, redirect to home
+		res.redirect('/');
+	}
+);
+```
+
 ## Examples
 
 For a complete working example, refer to 'examples' directory.
