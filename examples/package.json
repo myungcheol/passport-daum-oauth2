@@ -4,7 +4,8 @@
 		"static-favicon"       : "1.0.0",
 		"express-session"      : "1.8.2",
 	    "passport"             : "0.1.17", 		
-	    "passport-oauth2"      : "1.1.2"
+	    "passport-oauth2"      : "1.1.2",
+	    "passport-daum-oauth2" : "0.0.1"
 	},
 	"main": "./app.js",
 	"scripts": {

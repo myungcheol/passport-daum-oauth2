@@ -21,9 +21,6 @@ passport.use('daum', new DaumStrategy({
     callbackURL : callbackURL
 }, function(accessToken, refreshToken, profile, done) {
 	process.nextTick(function () {
-		console.log('profile', profile);
-		console.log('token', accessToken);
-
 		return done(null, profile);
 	});
 }));
@@ -67,8 +64,3 @@ app.get('/daum/callback', function(req, res, next) {
 });
 
 app.listen(3000);
-
-function isLoggedIn(req, res, next) {
-	if (req.isAuthenticated()) { return next(); }
-	res.redirect('/daum');
-}
