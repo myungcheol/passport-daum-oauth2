@@ -1,0 +1,23 @@
+{
+	"name": "passport-dau-oauth2",
+	"version" : "0.0.1",
+	"description" : "Passport strategy for Daum",
+	"keywords": ["passport", "daum", "oauth2", "authentication"],
+	"author": {
+		"name" : "Myungcheol Doo",
+		"email": "myungcheol@gmail.com",
+		"url"  : "http://github.com/myungcheol"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url" : "http://www.opensource.org/licenses/MIT"
+		}
+	].
+	"main" : "./lib",
+	"dependencies" : {
+		"passport-oauth2": "1.1.2"
+	},
+	"readmeFilename" : "README.md",
+	"homepage" : "http://github.com/myungcheol/passport-daum-oauth2"
+}
